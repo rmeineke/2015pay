@@ -1,0 +1,49 @@
+Joey mcdonald
+Comm. Mgr or Division Manager
+Comm Mgr
+
+Supervg Pub Safety Disp
+Sup PSD
+
+Senr Pub Safe Dispatch
+Sr PSD
+
+Public Safety Radio Disp FT
+PSRD
+
+Public Sfty Radio Disp Trainee
+PSRDT
+
+Public Safety Radio Disp PT
+PSRD PT
+
+Public Safety Com Spec FT
+PSCS
+
+Public Safety Com Spec PT
+PSCS PT
+
+
+'''
+    str = 'SELECT name, ttl_cash, base_pay, ot, sick_vac_payout \
+                    FROM paydata \
+                    WHERE title = "PSRD" \
+                    AND dept = "Fire"'
+    select_from(logger, cur, str, "Fire PSRDs")
+
+    str = 'SELECT name, ttl_cash, base_pay, ot, sick_vac_payout \
+                    FROM paydata \
+                    WHERE title = "PSRD" \
+                    AND dept = "Police"'
+    select_from(logger, cur, str, 'PD PSRDs')
+
+    str = 'SELECT name, ttl_cash, base_pay, ot, sick_vac_payout \
+                    FROM paydata \
+                    WHERE title = "PSRD"'
+    select_from(logger, cur, str, 'All PSRDs')
+
+    str = 'SELECT name, ttl_cash, base_pay, ot, sick_vac_payout \
+                        FROM paydata \
+                        WHERE title = "PSRD PT"'
+    select_from(logger, cur, str, 'Part-time PSRDs')
+'''
