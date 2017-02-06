@@ -4,6 +4,7 @@ import logging
 import sys
 import sqlite3
 import datetime
+import json
 
 
 def main():
@@ -31,6 +32,16 @@ def main():
 
     print_html_headers('2015 Pay Information')
 
+    with open('params.json') as data_file:
+        data = json.load(data_file)
+
+    for rank in data["params"]:
+        logger.debug('in the params loop')
+        logger.debug(rank['sql_str'])
+        logger.debug(rank['color'])
+        generic_select(logger, cur, rank['sql_str'], rank['cols_to_display'], rank['col_to_bold'], rank['title_str'], rank['color'])
+
+    exit(0)
     # ---------------------------------------------------
     # This needs to be made into a list for easier for-looping
     sql_str = '''
