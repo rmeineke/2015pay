@@ -24,10 +24,12 @@ def main():
     logger = logging.getLogger()
     logger.debug('Entering main')
 
+    # ######################## CHANGE
     db_name = '2015.pay.db'
     create_db(logger, db_name)
 
-    csv_fn = '2015.pay.csv'
+    # ######################## CHANGE
+    csv_fn = '2015raw_data.csv'
     load_file(logger, csv_fn, db_name)
 
 
@@ -75,7 +77,6 @@ def load_file(logger, fn, db):
         reader = csv.DictReader(fin)
         for row in reader:
             name = row['name']
-            print(name)
             dept = row['dept']
             title = row['title']
             ttl_cash = convert_to_float(logger, row['ttl_cash'])
@@ -88,14 +89,6 @@ def load_file(logger, fn, db):
             city_paid_ret_contrib = convert_to_float(logger, row['city_paid_ret_contrib'])
             disability_life_medicare = convert_to_float(logger, row['disability_life_medicare'])
             misc_costs = convert_to_float(logger, row['misc_costs'])
-
-            # sql_stmt = """\
-            # INSERT INTO paydata (name, dept, title, ttl_cash, base_pay, ot, sick_vac_payout, other_cash, city_paid_defined_contrib, medical_dental_vision, city_paid_ret_contrib, disability_life_medicare, misc_costs)
-            # VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),
-            #      (name, dept, title, ttl_cash, base_pay, ot, sick_vac_payout, other_cash, city_paid_defined_contrib, medical_dental_vision, city_paid_ret_contrib, disability_life_medicare, misc_costs)"""
-            # print(sql_stmt)
-            # cur.execute(sql_stmt)
-
 
             cur.execute('INSERT INTO paydata (name, dept, title, ttl_cash, base_pay, ot, \
                             sick_vac_payout, other_cash, city_paid_defined_contrib, \

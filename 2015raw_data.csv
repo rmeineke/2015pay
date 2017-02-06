@@ -1,4 +1,4 @@
-"Name","Department","Job Title (as of 12/31/15)","Total Cash Compensation","Base Pay","Overtime","Sick and Vacation Payouts","Other Cash Compensation","Defined Contribution Plan Contributions - City Paid","Medical Dental Vision","Retirement Contributions - City Paid*","Long Term Disability, Life, Medicare","Misc Employment Related Costs"
+"name","dept","title","ttl_cash","base_pay","ot","sick_vac_payout","other_cash","city_paid_defined_contrib","medical_dental_vision","city_paid_ret_contrib","disability_life_medicare","misc_costs"
 "Guerra,Daniel P","Police","Police Officer","315,390.77","106,194.40","189,835.56","","19,360.81","","15,884.76","98,048.25","4,490.14",""
 "Uribe,Jose J","Police","Police Officer","310,661.62","106,194.40","189,808.52","","14,658.70","","7,348.44","98,048.25","4,525.91",""
 "Vasquez,Hector M","Police","Police Officer","299,854.41","106,194.40","178,271.75","","15,388.26","","15,884.76","98,048.25","4,414.82",""

@@ -1,3 +1,15 @@
+Get latest file
+
+compare headers
+    2015 had 13 fields
+
+change header line in the file
+"name","dept","title","ttl_cash","base_pay","ot","sick_vac_payout","other_cash","city_paid_defined_contrib","medical_dental_vision","city_paid_ret_contrib","disability_life_medicare","misc_costs"
+
+
+--------------------------------
+
+
 Joey mcdonald
 Comm. Mgr or Division Manager
 Comm Mgr
@@ -47,3 +59,60 @@ PSCS PT
                         WHERE title = "PSRD PT"'
     select_from(logger, cur, str, 'Part-time PSRDs')
 '''
+
+
+HEADERS
+"Name",
+"Department",
+"Job Title (as of 12/31/15)",
+"Total Cash Compensation",
+"Base Pay","Overtime",
+"Sick and Vacation Payouts",
+"Other Cash Compensation",
+"Defined Contribution Plan Contributions - City Paid",
+"Medical Dental Vision","Retirement Contributions - City Paid*",
+"Long Term Disability, Life, Medicare",
+"Misc Employment Related Costs"
+
+id
+name
+dept
+title
+ttl_cash
+base_pay
+ot
+sick_vac_payout
+other_cash
+city_paid_defined_contrib
+medical_dental_vision
+city_paid_ret_contrib
+disability_life_medicare
+misc_costs
+
+SPECIAL CASES
+"Mc Donald,Joey L","Police","Division Manager","144,719.89","139,409.27","","","5,310.62","","1,582.08","99,404.62","2,632.17",""
+
+
+
+
+
+
+
+
+
+
+
+
+
+    sql_str = """SELECT name, ttl_cash, base_pay, ot, other_cash, sick_vac_payout
+              FROM paydata
+              WHERE {0}
+              AND sick_vac_payout=0
+              AND {1}
+              UNION ALL
+              SELECT name, ttl_cash, base_pay, ot, other_cash, sick_vac_payout
+              FROM paydata
+              WHERE {0}
+              AND sick_vac_payout>0
+              AND {1}""".format('title = "Sr. PSD"', 'dept = "Fire"')
+
