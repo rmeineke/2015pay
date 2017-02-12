@@ -116,3 +116,17 @@ SPECIAL CASES
               AND sick_vac_payout>0
               AND {1}""".format('title = "Sr. PSD"', 'dept = "Fire"')
 
+robertm@Sys76:~$ cd programming/2015pay/
+robertm@Sys76:~/programming/2015pay$ ./load_db.py
+Ru Weerakoon <<<<<<<<<<<<<<<
+Richard Keit <<<<<<<<<<<<<<<
+Abe Andrade <<<<<<<<<<<<<<<
+Sandy Shayesteh <<<<<<<<<<<<<<<
+Holly Le <<<<<<<<<<<<<<<
+Bob Staedler <<<<<<<<<<<<<<<
+Jayme Dickson <<<<<<<<<<<<<<<
+robertm@Sys76:~/programming/2015pay$ ^C
+robertm@Sys76:~/programming/2015pay$
+
+
+

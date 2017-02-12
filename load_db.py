@@ -76,7 +76,13 @@ def load_file(logger, fn, db):
     with open(fn, 'r', encoding='utf-8') as fin:
         reader = csv.DictReader(fin)
         for row in reader:
-            name = row['name']
+            # add a blank after the comma in the name ....
+            if ',' in row['name']:
+                name = row['name'].replace(',', ', ')
+            else:
+                print('{} <<<<<<<<<<<<<<< '.format(row['name']))
+                name = row['name']
+            # if there is no comma .. need to normalize the data
             dept = row['dept']
             title = row['title']
             ttl_cash = convert_to_float(logger, row['ttl_cash'])
@@ -95,7 +101,7 @@ def load_file(logger, fn, db):
                             medical_dental_vision, city_paid_ret_contrib, \
                             disability_life_medicare, misc_costs) \
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                        (row['name'], row['dept'], row['title'],
+                        (name, dept, title,
                          ttl_cash,
                          base_pay,
                          ot,
@@ -170,4 +176,14 @@ if __name__ == '__main__':
 "4,490.14",
 ""
 
+'''
+'''
+robertm@Sys76:~/programming/2015pay$ ./load_db.py
+x Ru Weerakoon <<<<<<<<<<<<<<<
+Richard Keit <<<<<<<<<<<<<<<
+Abe Andrade <<<<<<<<<<<<<<<
+Sandy Shayesteh <<<<<<<<<<<<<<<
+Holly Le <<<<<<<<<<<<<<<
+Bob Staedler <<<<<<<<<<<<<<<
+x Jayme Dickson <<<<<<<<<<<<<<<
 '''

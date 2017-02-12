@@ -1,0 +1,25 @@
+{
+  "params": [
+    {
+      "sql_str": "SELECT * FROM paydata WHERE name = 'Mc Donald,Joey L' AND dept = 'Police'",
+      "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+      "col_to_bold": "[]",
+      "title_str": "-- PD Comm Manager --",
+      "color": "blue"
+    },
+    {
+      "sql_str": "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout = 0 AND dept = 'Fire' UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout > 0 AND dept = 'Fire'",
+      "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+      "col_to_bold": "[]",
+      "title_str": "-- Fire Supervising PSDs --",
+      "color": "red"
+    },
+    {
+      "sql_str": "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout = 0 AND dept = 'Police' UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout > 0 AND dept = 'Police'",
+      "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+      "col_to_bold": "[]",
+      "title_str": "-- Police Supervising PSDs --",
+      "color": "blue"
+    }
+  ]
+}

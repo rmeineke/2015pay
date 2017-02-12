@@ -1,16 +1,132 @@
 {"params":[
   {
-    "sql_str": "SELECT * FROM paydata WHERE name = 'Mc Donald,Joey L' AND dept = 'Police'",
-    "cols_to_display": "['name', 'ttl_cash', 'base_pay', 'ot', 'other_cash', 'sick_vac_payout']",
+    "sql_str": "SELECT * FROM paydata WHERE name = 'Mc Donald, Joey L' AND dept = 'Police'",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
     "col_to_bold": "[]",
     "title_str": "-- PD Comm Manager --",
     "color": "blue"
   },
   {
-    "sql_str": "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout=0 AND dept = 'Fire' UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout>0 AND dept = 'Fire'",
+    "sql_str" : "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout = 0 AND dept = 'Fire' UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout > 0 AND dept = 'Fire'",
+    "cols_to_display" : "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold" : "[]",
+    "title_str" : "-- Fire Supervising PSDs --",
+    "color" : "red"
+  },
+  {
+    "sql_str": "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout = 0 AND dept = 'Police' UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout > 0 AND dept = 'Police'",
+    "cols_to_display" : "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold" : "[]",
+    "title_str" : "-- Police Supervising PSDs --",
+    "color" : "blue"
+  },
+  {
+    "sql_str": "SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Supervg Pub Safety Disp' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- All Supervising PSDs --",
+    "color": "grey"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout = 0 AND dept = 'Fire' UNION ALL SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout > 0 AND dept = 'Fire'",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Fire Senior PSDs --",
+    "color": "red"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout = 0 AND dept = 'Police' UNION ALL SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout > 0 AND dept = 'Police' ",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Police Senior PSDs --",
+    "color": "blue"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Senr Pub Safe Dispatch' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- All Senior PSDs --",
+    "color": "grey"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout = 0 AND dept = 'Fire' UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout > 0 AND dept = 'Fire'",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Fire, Full Time PSRDs --",
+    "color": "red"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout = 0 AND dept = 'Police' UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout > 0 AND dept = 'Police' ",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Police, Full Time PSRDs --",
+    "color": "blue"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp FT' AND sick_vac_payout > 0",
     "cols_to_display": "['name', 'ttl_cash', 'base_pay', 'ot', 'other_cash', 'sick_vac_payout']",
     "col_to_bold": "[]",
-    "title_str": "-- Fire Supervising PSDs --",
-    "color": "red"
+    "title_str": "-- All, Full Time PSRDs --",
+    "color": "grey"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp PT' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Radio Disp PT' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- All, Part Time PSRDs --",
+    "color": "grey"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Sfty Radio Disp Trainee' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Public Sfty Radio Disp Trainee' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- All, PSRD Trainees --",
+    "color": "grey"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Com Spec FT' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Com Spec FT' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Full Time PSCSs --",
+    "color": "blue"
+  },
+  {
+    "sql_str":"SELECT * FROM paydata WHERE title = 'Public Safety Com Spec PT' AND sick_vac_payout = 0 UNION ALL SELECT * FROM paydata WHERE title = 'Public Safety Com Spec PT' AND sick_vac_payout > 0",
+    "cols_to_display": "name ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold": "[]",
+    "title_str": "-- Part Time PSCSs --",
+    "color": "blue"
+  },
+  {
+    "__comment":"O/T earned greater than $100k",
+    "sql_str":"SELECT * FROM paydata WHERE ot > 99999.99 ORDER BY ot DESC",
+    "cols_to_display":"name dept title ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold":"['ot']",
+    "title_str":"-- Overtime >= $100,000 --",
+    "color":"grey"
+  },
+  {
+    "__comment":"Sick and Vac payouts greater than $100k",
+    "sql_str":"SELECT * FROM paydata WHERE sick_vac_payout > 99999.99 ORDER BY sick_vac_payout DESC",
+    "cols_to_display":"name dept title ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold":"['sick_vac_payout']",
+    "title_str":"-- Sick/Vac Payouts >= $100,000 --",
+    "color":"grey"
+  },
+  {
+    "__comment":"ALL FIRE",
+    "sql_str":"SELECT * FROM paydata WHERE dept = 'Fire' ORDER BY ttl_cash DESC",
+    "cols_to_display":"name title ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold":"[]",
+    "title_str":"-- All Fire --",
+    "color":"red"
+  },
+  {
+    "__comment":"ALL POLICE",
+    "sql_str":"SELECT * FROM paydata WHERE dept = 'Police' ORDER BY ttl_cash DESC",
+    "cols_to_display":"name title ttl_cash base_pay ot other_cash sick_vac_payout",
+    "col_to_bold":"[]",
+    "title_str":"-- All Police --",
+    "color":"blue"
   }
 ]}
